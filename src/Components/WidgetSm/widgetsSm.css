@@ -1,0 +1,57 @@
+.widgetSm{
+    flex: 1;
+    box-shadow: -1px 4px 14px -1px rgba(0,0,0,0.23);
+    -webkit-box-shadow: -1px 4px 14px -1px rgba(0,0,0,0.23);
+    -moz-box-shadow: -1px 4px 14px -1px rgba(0,0,0,0.23);
+    margin-right: 20px;
+    padding: 20px;
+}
+.widgetSmTitle{
+    font-size: 22px;
+    font-weight: 600;
+}
+.widgetSmList{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.widgetSmImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right:15px ;
+}
+.widgetSmItem{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+.widgetSmbutton{
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    padding:7px 10px;
+    background-color: #eeeef7;
+    color: #018080;
+    cursor: pointer;
+}
+.widgetsmIcon{
+    margin-right: 5px ;
+    font-size: 15px !important;
+}
+.widgetSmUser{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+.widgetSmUsername{
+    font-weight: 600;
+   
+}
+.widgetSmJobcatagory{
+    font-weight: 300;
+    font-size: 15px;
+}
