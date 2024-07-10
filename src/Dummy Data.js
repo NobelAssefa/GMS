@@ -49,6 +49,57 @@ export const Userdata = [
     },
   ];
 
+  export const Productdata = [
+    {
+      name: "Jan",
+      "Sales": 4000,
+    },
+    {
+      name: "Feb",
+      "Sales": 3000,
+    },
+    {
+      name: "Mar",
+      "Sales": 2000,
+    },
+    {
+      name: "Apr",
+      "Sales": 2780,
+    },
+    {
+      name: "May",
+      "Sales": 1890,
+    },
+    {
+      name: "Jun",
+      "Sales": 2390,
+    },
+    {
+      name: "Jul",
+      "Sales": 3490,
+    },
+    {
+      name: "Aug",
+      "Sales": 5200,
+    },
+    {
+      name: "Sep",
+      "Sales": 3255,
+    },
+    {
+      name: "Oct",
+      "Sales": 4250,
+    },
+    {
+      name: "Nov",
+      "Sales": 6000,
+    },
+    {
+      name: "Dec",
+      "Sales": 5000,
+    },
+  ];
+
   export const userRows = [
     {
       id: 1,
@@ -144,5 +195,109 @@ export const Userdata = [
         "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400",
       status: "Active",
       transaction: "$120",
+    },
+  ];
+
+
+  export const productRows = [
+    {
+      id: 1,
+      name: "Jbl Headset",
+      stock: "250",
+      img:
+        "https://images.pexels.com/photos/13650607/pexels-photo-13650607.jpeg?auto=compress&cs=tinysrgb&w=400",
+
+      status: "Active",
+      price: "$120",
+    },
+    {
+      id: 2,
+      name: "Jbl Headset",
+      stock: "250",
+      img:
+        "https://images.pexels.com/photos/13650607/pexels-photo-13650607.jpeg?auto=compress&cs=tinysrgb&w=400",
+
+      status: "Active",
+      price: "$120",
+    },
+    {
+      id: 3,
+      name: "Jbl Headset",
+      stock: "250",
+      img:
+        "https://images.pexels.com/photos/13650607/pexels-photo-13650607.jpeg?auto=compress&cs=tinysrgb&w=400",
+
+      status: "Active",
+      price: "$120",
+    },
+    {
+      id: 4,
+      name: "Jbl Headset",
+      stock: "250",
+      img:
+        "https://images.pexels.com/photos/13650607/pexels-photo-13650607.jpeg?auto=compress&cs=tinysrgb&w=400",
+
+      status: "Active",
+      price: "$120",
+    },
+    {
+      id: 5,
+      name: "Jbl Headset",
+      stock: "250",
+      img:
+        "https://images.pexels.com/photos/13650607/pexels-photo-13650607.jpeg?auto=compress&cs=tinysrgb&w=400",
+
+      status: "Active",
+      price: "$120",
+    },
+    {
+      id: 6,
+      name: "Jbl Headset",
+      stock: "250",
+      img:
+        "https://images.pexels.com/photos/13650607/pexels-photo-13650607.jpeg?auto=compress&cs=tinysrgb&w=400",
+
+      status: "Active",
+      price: "$120",
+    },
+    {
+      id: 7,
+      name: "Jbl Headset",
+      stock: "250",
+      img:
+        "https://images.pexels.com/photos/13650607/pexels-photo-13650607.jpeg?auto=compress&cs=tinysrgb&w=400",
+
+      status: "Active",
+      price: "$120",
+    },
+    {
+      id: 8,
+      name: "Jbl Headset",
+      stock: "250",
+      img:
+        "https://images.pexels.com/photos/13650607/pexels-photo-13650607.jpeg?auto=compress&cs=tinysrgb&w=400",
+
+      status: "Active",
+      price: "$120",
+    },
+    {
+      id: 9,
+      name: "Jbl Headset",
+      stock: "250",
+      img:
+        "https://images.pexels.com/photos/13650607/pexels-photo-13650607.jpeg?auto=compress&cs=tinysrgb&w=400",
+
+      status: "Active",
+      price: "$120",
+    },
+    {
+      id: 10,
+      name: "Jbl Headset",
+      stock: "250",
+      img:
+        "https://images.pexels.com/photos/13650607/pexels-photo-13650607.jpeg?auto=compress&cs=tinysrgb&w=400",
+
+      status: "Active",
+      price: "$120",
     },
   ];
