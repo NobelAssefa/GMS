@@ -12,18 +12,19 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import ErrorOutlinedIcon from "@mui/icons-material/ErrorOutlined";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import { Link } from "react-router-dom";
-export default function Sidebar() {
+
+export default function Sidebar({ isCollapsed }) {
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
       <div className="sidebarwrapper">
         <div className="sidebarMenu">
           <h1 className="title">Dashbaord</h1>
           <ul className="sideBarList">
             <Link to="/" className="link">
-            <li className="sidebarListItem active">
-              <LineStyleIcon className="sideBarIcons" />
-              Home
-            </li>
+              <li className="sidebarListItem active">
+                <LineStyleIcon className="sideBarIcons" />
+                Home
+              </li>
             </Link>
             <li className="sidebarListItem">
               <TrendingUpIcon className="sideBarIcons" />

@@ -1,32 +1,65 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import "./topbar.css"
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import LanguageIcon from '@mui/icons-material/Language';
 import SettingsIcon from '@mui/icons-material/Settings';
 export default function Topbar() {
+
+  
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
   return (
-   <div className="topbar">
-    <div className="topbarWrapper">
-        <div className="topleft">
-            <div className="logo">DamascusAdmin</div>
-        </div>
-        <div className="topright">
-            <div className="topbarIconcontainer">
-                <NotificationsIcon></NotificationsIcon>
-                <span className="topiconbadge">2</span>
-            </div>
-            <div className="topbarIconcontainer">
-                <LanguageIcon></LanguageIcon>
-                <span className="topiconbadge">2</span>
-            </div> <div className="topbarIconcontainer">
-                <SettingsIcon></SettingsIcon>
-                
-            </div>
-            <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" className="avatar" />
-        </div>
+    <div className="topbar">
+     <div className="topbarWrapper">
+         <div className="topleft">
+             <div className="logo">eNGEDA</div>
+         </div>
+         <div className="topright">
+             <div className="topbarIconcontainer">
+                 <NotificationsIcon></NotificationsIcon>
+                 <span className="topiconbadge">2</span>
+             </div>
+             <div className="topbarIconcontainer">
+                 <LanguageIcon></LanguageIcon>
+                 <span className="topiconbadge">2</span>
+             </div>
+             <div className="topbarIconcontainer">
+                 <SettingsIcon></SettingsIcon>
+             </div>
+             <div className="avatar-container" ref={dropdownRef}>
+                 <img 
+                     src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                     alt="" 
+                     className="avatar" 
+                     onClick={toggleDropdown}
+                 />
+                 {isDropdownOpen && (
+                     <div className="dropdown-menu">
+                         <div className="dropdown-item">Profile</div>
+                         <div className="dropdown-item">Settings</div>
+                         <div className="dropdown-item">Logout</div>
+                     </div>
+                 )}
+             </div>
+         </div>
+     </div>
     </div>
-   </div>
-  )
+   )
 }
 
 

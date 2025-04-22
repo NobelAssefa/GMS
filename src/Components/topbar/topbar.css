@@ -1,10 +1,12 @@
 .topbar {
     width: 100%;
     height: 50px;
-    background-color: white;
+    background-color: #F0F1F7;
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .topbarWrapper {
@@ -18,14 +20,14 @@
 .logo {
     font-weight: bold;
     font-size: 20px;
-    color: #018080;
+    color: #0C1442;
     cursor: pointer;
 }
 
 .topbarIconcontainer {
     position: relative;
     align-items: center;
-    color: #555;
+    color: #0C1442;
     margin-right: 10px;
 }
 
@@ -53,4 +55,55 @@
     justify-content: center;
     border-radius: 50%;
     font-size: 10px;
+}
+
+.avatar-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #F0F1F7;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1000;
+    margin-top: 5px;
+}
+
+.dropdown-item {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #0C1442;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #e4e6ef;
+}
+
+.dropdown-item:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.dropdown-item:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.menuIcon {
+    cursor: pointer;
+    margin-right: 15px;
+    color: #0C1442;
+    display: flex;
+    align-items: center;
+}
+
+.menuIcon:hover {
+    opacity: 0.8;
 }
