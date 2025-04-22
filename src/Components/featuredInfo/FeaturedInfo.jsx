@@ -5,7 +5,7 @@ import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 export default function FeaturedInfo() {
   return (
     <div className="featured">
-        <div className="featuredItem">
+        <div className="featuredItem revenue">
             <span className="featuredTitle">Revenue</span>
             <div className="featuredMoneyContainer">
                 <span className="featureMoney">$2,415</span>
@@ -16,7 +16,7 @@ export default function FeaturedInfo() {
             </div>
             <div className="featureSub">Compared to Last year</div>
         </div>
-        <div className="featuredItem">
+        <div className="featuredItem sales">
             <span className="featuredTitle">Sales</span>
             <div className="featuredMoneyContainer">
                 <span className="featureMoney">$2,415</span>
@@ -27,7 +27,7 @@ export default function FeaturedInfo() {
             </div>
             <div className="featureSub">Compared to Last year</div>
         </div>
-        <div className="featuredItem">
+        <div className="featuredItem cost">
             <span className="featuredTitle">Cost</span>
             <div className="featuredMoneyContainer">
                 <span className="featureMoney">$2,415</span>

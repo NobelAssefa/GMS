@@ -3,26 +3,38 @@ import "./topbar.css"
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import LanguageIcon from '@mui/icons-material/Language';
 import SettingsIcon from '@mui/icons-material/Settings';
-export default function Topbar() {
 
-  
+export default function Topbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
   useEffect(() => {
+    const handleKeyPress = (event) => {
+      // Check for Ctrl+Shift+Y
+      if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'y') {
+        toggleDropdown();
+      }
+    };
+
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
       }
     };
 
+    document.addEventListener('keydown', handleKeyPress);
     document.addEventListener('mousedown', handleClickOutside);
+    
     return () => {
+      document.removeEventListener('keydown', handleKeyPress);
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
   return (
     <div className="topbar">
      <div className="topbarWrapper">
