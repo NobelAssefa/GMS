@@ -51,9 +51,7 @@ export default function Topbar() {
                  <LanguageIcon></LanguageIcon>
                  <span className="topiconbadge">2</span>
              </div>
-             <div className="topbarIconcontainer">
-                 <SettingsIcon></SettingsIcon>
-             </div>
+         
              <div className="avatar-container" ref={dropdownRef}>
                  <img 
                      src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400" 

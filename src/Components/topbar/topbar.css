@@ -29,22 +29,45 @@
     margin-top: 10px;
 }
 
-.topbarIconcontainer {
-    position: relative;
-    align-items: center;
-    color: #ecf0f1;
-    margin-right: 10px;
-}
-
 .topright {
     display: flex;
-    margin-right: 10px;
+    align-items: center;
+    gap: 12px;
+    margin-right: 40px;
+    padding-right: 20px;
+}
+
+.topbarIconcontainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #ecf0f1;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.topbarIconcontainer:hover {
+    color: #bdc3c7;
+}
+
+.avatar-container {
+    position: relative;
+    cursor: pointer;
+    margin-left: 5px;
 }
 
 .avatar {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.avatar:hover {
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .topiconbadge {
@@ -52,7 +75,7 @@
     height: 15px;
     position: absolute;
     top: -5px;
-    right: 0px;
+    right: -5px;
     background-color: red;
     color: white;
     display: flex;
@@ -62,21 +85,15 @@
     font-size: 10px;
 }
 
-.avatar-container {
-    position: relative;
-    cursor: pointer;
-}
-
 .dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 10px);
     right: 0;
     background-color: #2c3e50;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     min-width: 160px;
     z-index: 1000;
-    margin-top: 5px;
 }
 
 .dropdown-item {
@@ -89,57 +106,6 @@
 
 .dropdown-item:hover {
     background-color: #34495e;
-}
-
-.dropdown-item:first-child {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-.dropdown-item:last-child {
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-.menuIcon {
-    cursor: pointer;
-    margin-right: 15px;
-    color: #ecf0f1;
-    display: flex;
-    align-items: center;
-}
-
-.menuIcon:hover {
-    color: #bdc3c7;
-}
-
-.avatar-container {
-    position: relative;
-    cursor: pointer;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    min-width: 160px;
-    z-index: 1000;
-    margin-top: 5px;
-}
-
-.dropdown-item {
-    padding: 12px 16px;
-    font-size: 14px;
-    color: #555;
-    transition: background-color 0.2s;
-    cursor: pointer;
-}
-
-.dropdown-item:hover {
-    background-color: #f5f5f5;
 }
 
 .dropdown-item:first-child {

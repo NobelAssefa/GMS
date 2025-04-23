@@ -12,6 +12,9 @@ import Product from './Pages/Product/Product';
 import NewProduct from './Pages/NewProduct/NewProduct';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import GuestRegistrationPage from './Pages/GuestRegistration/GuestRegistrationPage';
+import VisitRequestPage from './Pages/VisitRequest/visitRequestPage';
+import VisitApprovalPage from './Pages/VisitApproval/VisitApprovalPage';
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -38,6 +41,9 @@ function App() {
               <Route path="/products" element={<ProductList/>}/>
               <Route path="/product/:productId" element={<Product/>}/>
               <Route path="/newproduct" element={<NewProduct/>}/>
+              <Route path="/guest/registration" element={<GuestRegistrationPage />} />
+              <Route path="/visit/request" element={<VisitRequestPage />} />
+              <Route path="/visit/approval" element={<VisitApprovalPage />} />
             </Routes>
           </div>
         </div>
