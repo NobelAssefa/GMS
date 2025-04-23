@@ -3,18 +3,14 @@ import Topbar from "./Components/topbar/Topbar";
 import Sidebar from './Components/sidebar/Sidebar';
 import "./app.css";
 import Home from './Pages/Home/Home';
-import User from './Pages/User/User';
-import ProductList from './Pages/ProductList/ProductList';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import UserList from './Pages/UserList/UserList';
-import NewUser from './Pages/NewUser/NewUser';
-import Product from './Pages/Product/Product';
-import NewProduct from './Pages/NewProduct/NewProduct';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import GuestRegistrationPage from './Pages/GuestRegistration/GuestRegistrationPage';
 import VisitRequestPage from './Pages/VisitRequest/visitRequestPage';
 import VisitApprovalPage from './Pages/VisitApproval/VisitApprovalPage';
+import CheckInPanelPage from './Pages/CheckInPanel/CheckInPanelPage';
+import UserManagementPage from './Pages/UserManagement/UserManagementPage';
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -35,15 +31,11 @@ function App() {
             </div>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/users" element={<UserList/>}/>
-              <Route path="/user/:userId" element={<User/>}/>
-              <Route path="/newuser" element={<NewUser/>}/>
-              <Route path="/products" element={<ProductList/>}/>
-              <Route path="/product/:productId" element={<Product/>}/>
-              <Route path="/newproduct" element={<NewProduct/>}/>
+              <Route path="/user" element={<UserManagementPage/>}/>
               <Route path="/guest/registration" element={<GuestRegistrationPage />} />
               <Route path="/visit/request" element={<VisitRequestPage />} />
               <Route path="/visit/approval" element={<VisitApprovalPage />} />
+              <Route path="/checkin" element={<CheckInPanelPage />} />
             </Routes>
           </div>
         </div>
