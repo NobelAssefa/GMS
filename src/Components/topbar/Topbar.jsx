@@ -3,6 +3,7 @@ import "./topbar.css"
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import LanguageIcon from '@mui/icons-material/Language';
 import SettingsIcon from '@mui/icons-material/Settings';
+import logo from '../../Assets/icons/Untitled.svg';
 
 export default function Topbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -39,7 +40,7 @@ export default function Topbar() {
     <div className="topbar">
      <div className="topbarWrapper">
          <div className="topleft">
-             <div className="logo">eNGEDA</div>
+             <img src={logo} alt="eNGEDA" className="logo" />
          </div>
          <div className="topright">
              <div className="topbarIconcontainer">

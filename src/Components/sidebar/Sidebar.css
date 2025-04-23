@@ -8,6 +8,7 @@
     width: 250px;
     z-index: 100;
     overflow: hidden;
+    box-shadow: 16px 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
 }
@@ -99,7 +100,7 @@
 
 .title {
     font-size: 23px;
-    color: #2197B4;
+    color: #fcfcfc;
     margin-left: 5px;
     margin-bottom: 30px;
 }
@@ -127,7 +128,7 @@
 
 .sidebarListItem.active,
 .sidebarListItem:hover {
-    background-color: rgb(180, 163, 163);
+    background-color: rgb(23, 3, 50);
     width: 100%;
 }
 
@@ -138,7 +139,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #0C1442;
+    color: #d5d7e6;
 }
 
 /* Hide text nodes directly inside sidebarListItem */
@@ -161,7 +162,7 @@
 }
 
 .userProfile:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgb(255, 254, 254);
 }
 
 .userAvatar {

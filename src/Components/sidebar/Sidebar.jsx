@@ -39,7 +39,7 @@ export default function Sidebar({ isCollapsed }) {
     <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
       <div className="sidebarwrapper">
         <div className="sidebarMenu">
-          <h1 className="title">eNGEDA</h1>
+          <h1 className="title">eNGEDA.</h1>
           <ul className="sideBarList">
             <Link to="/" className="link" onClick={() => handleItemClick("/")}>
               <li className={`sidebarListItem ${activeItem === "/" ? "active" : ""}`}>
