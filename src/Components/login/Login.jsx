@@ -37,7 +37,7 @@ const Login = () => {
                     Welcome Back!
                 </Typography>
                 <Typography variant="body1" className="welcome-subtitle">
-                    To keep connected with us please login with your personal info
+                    Welcome to Guest Management System
                 </Typography>
 
                 <form onSubmit={handleSubmit} className="login-form">
