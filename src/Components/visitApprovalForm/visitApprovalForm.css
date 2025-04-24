@@ -1,85 +1,26 @@
-.visit-approval-container {
+.visit-approval-page {
     padding: 20px;
-    background: white;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-header {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f2f8);
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.visit-table {
-    margin-bottom: 20px;
-}
-
-/* Table header styling */
-.MuiTableHead-root .MuiTableCell-head {
-    background-color: #1F2C40;
-    color: white;
-    font-weight: 600;
-}
-
-/* Table row hover effect */
-.MuiTableBody-root .MuiTableRow-root:hover {
-    background-color: #f5f6fa;
-}
-
-/* Table cell padding */
-.MuiTableCell-root {
-    padding: 12px 16px;
-}
-
-/* Approval form in modal */
-.approval-form {
-    padding: 16px 0;
-}
-
-.visit-details {
-    background-color: #f8f9fa;
-    padding: 16px;
-    border-radius: 8px;
-    margin-bottom: 24px;
-}
-
-.visit-details p {
-    margin: 8px 0;
-    color: #333;
-}
-
-.visit-details strong {
+.page-header h1 {
+    font-size: 32px;
     color: #1F2C40;
-    margin-right: 8px;
+    margin-bottom: 10px;
+    font-weight: 800;
 }
 
-.status-radio-group {
-    margin: 24px 0;
+.page-header p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
 }
-
-/* Status chip colors */
-.MuiChip-root.MuiChip-colorSuccess {
-    background-color: #e6f4ea;
-    color: #1e4620;
-}
-
-.MuiChip-root.MuiChip-colorError {
-    background-color: #fde7e7;
-    color: #932419;
-}
-
-.MuiChip-root.MuiChip-colorWarning {
-    background-color: #fff4e5;
-    color: #663c00;
-}
-
-/* Dialog actions spacing */
-.MuiDialogActions-root {
-    padding: 16px 24px;
-    border-top: 1px solid #eee;
-}
-
-/* Review button styling */
-.MuiButton-contained {
-    text-transform: none;
-    background-color: #1F2C40;
-}
-
-.MuiButton-contained:hover {
-    background-color: #2a3b55;
-} 

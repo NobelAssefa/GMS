@@ -250,58 +250,53 @@ export default function GuestForm({ onSubmit }) {
                                 />
                             </div>
 
-                            <div className="form-toggles">
-                                <FormControlLabel
-                                    control={
-                                        <Switch
-                                            checked={formData.isVip}
-                                            onChange={handleToggleChange('isVip')}
-                                            color="primary"
-                                            disabled={isSubmitting}
-                                        />
-                                    }
-                                    label="VIP Guest"
-                                />
-                                <FormControlLabel
-                                    control={
-                                        <Switch
-                                            checked={formData.hasCar}
-                                            onChange={handleToggleChange('hasCar')}
-                                            color="primary"
-                                            disabled={isSubmitting}
-                                        />
-                                    }
-                                    label="Has Car"
-                                />
-                            </div>
+                            <FormControlLabel
+                                control={
+                                    <Switch
+                                        checked={formData.isVip}
+                                        onChange={handleToggleChange('isVip')}
+                                        disabled={isSubmitting}
+                                    />
+                                }
+                                label="VIP Guest"
+                            />
+
+                            <FormControlLabel
+                                control={
+                                    <Switch
+                                        checked={formData.hasCar}
+                                        onChange={handleToggleChange('hasCar')}
+                                        disabled={isSubmitting}
+                                    />
+                                }
+                                label="Has Car"
+                            />
 
                             {formData.hasCar && (
                                 <div className="car-details">
-                                    <div className="form-row">
-                                        <div className="form-group">
-                                            <label>Plate Number</label>
-                                            <input
-                                                type="text"
-                                                name="plateNumber"
-                                                value={formData.plateNumber}
-                                                onChange={handleInputChange}
-                                                placeholder="Enter plate number"
-                                                required
-                                                disabled={isSubmitting}
-                                            />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Car Model</label>
-                                            <input
-                                                type="text"
-                                                name="carModel"
-                                                value={formData.carModel}
-                                                onChange={handleInputChange}
-                                                placeholder="Enter car model"
-                                                required
-                                                disabled={isSubmitting}
-                                            />
-                                        </div>
+                                    <div className="form-group">
+                                        <label>Plate Number</label>
+                                        <input
+                                            type="text"
+                                            name="plateNumber"
+                                            value={formData.plateNumber}
+                                            onChange={handleInputChange}
+                                            placeholder="Enter plate number"
+                                            required={formData.hasCar}
+                                            disabled={isSubmitting}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Car Model</label>
+                                        <input
+                                            type="text"
+                                            name="carModel"
+                                            value={formData.carModel}
+                                            onChange={handleInputChange}
+                                            placeholder="Enter car model"
+                                            required={formData.hasCar}
+                                            disabled={isSubmitting}
+                                        />
                                     </div>
                                     <div className="form-group">
                                         <label>Car Color</label>
@@ -311,7 +306,7 @@ export default function GuestForm({ onSubmit }) {
                                             value={formData.carColor}
                                             onChange={handleInputChange}
                                             placeholder="Enter car color"
-                                            required
+                                            required={formData.hasCar}
                                             disabled={isSubmitting}
                                         />
                                     </div>
@@ -319,9 +314,9 @@ export default function GuestForm({ onSubmit }) {
                             )}
 
                             <div className="items-section">
-                                <h3>Items Carrying</h3>
+                                <label>Items Carrying</label>
                                 <div className="items-grid">
-                                    {predefinedItems.map((item) => (
+                                    {predefinedItems.map(item => (
                                         <FormControlLabel
                                             key={item}
                                             control={
@@ -338,49 +333,33 @@ export default function GuestForm({ onSubmit }) {
 
                                 {showOtherItemInput && (
                                     <div className="other-item-input">
-                                        <div className="input-with-button">
-                                            <input
-                                                type="text"
-                                                value={newItem}
-                                                onChange={(e) => setNewItem(e.target.value)}
-                                                placeholder="Enter item name"
-                                                disabled={isSubmitting}
-                                            />
-                                            <button
-                                                type="button"
-                                                onClick={handleAddNewItem}
-                                                disabled={!newItem.trim() || isSubmitting}
-                                                className="add-item-button"
-                                            >
-                                                <AddIcon />
-                                            </button>
-                                        </div>
-                                        {formData.items.filter(item => !predefinedItems.includes(item)).length > 0 && (
-                                            <div className="custom-items-list">
-                                                {formData.items
-                                                    .filter(item => !predefinedItems.includes(item))
-                                                    .map((item, index) => (
-                                                        <div key={index} className="custom-item">
-                                                            <span>{item}</span>
-                                                            <button
-                                                                type="button"
-                                                                onClick={() => {
-                                                                    setFormData(prevState => ({
-                                                                        ...prevState,
-                                                                        items: prevState.items.filter(i => i !== item)
-                                                                    }));
-                                                                }}
-                                                                className="remove-item-button"
-                                                                disabled={isSubmitting}
-                                                            >
-                                                                ×
-                                                            </button>
-                                                        </div>
-                                                    ))}
-                                            </div>
-                                        )}
+                                        <input
+                                            type="text"
+                                            value={newItem}
+                                            onChange={(e) => setNewItem(e.target.value)}
+                                            placeholder="Enter item name"
+                                            disabled={isSubmitting}
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={handleAddNewItem}
+                                            disabled={!newItem.trim() || isSubmitting}
+                                            className="add-item-btn"
+                                        >
+                                            <AddIcon /> Add Item
+                                        </button>
                                     </div>
                                 )}
+                            </div>
+
+                            <div className="form-actions">
+                                <button
+                                    type="submit"
+                                    className="submit-button"
+                                    disabled={isSubmitting}
+                                >
+                                    {isSubmitting ? 'Registering...' : 'Register Guest'}
+                                </button>
                             </div>
                         </div>
 

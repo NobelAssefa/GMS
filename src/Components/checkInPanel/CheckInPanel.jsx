@@ -98,32 +98,44 @@ const sampleVisits = [
 ];
 
 export default function CheckInPanel() {
-    const [visitCode, setVisitCode] = useState('');
+    const [searchQuery, setSearchQuery] = useState('');
     const [visit, setVisit] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    const handleSearch = async () => {
-        if (!visitCode.trim()) return;
+    const handleSearch = (e) => {
+        e.preventDefault();
+        if (!searchQuery.trim()) return;
 
         setLoading(true);
         setError('');
         setSuccess('');
 
         try {
-            // Simulating API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            // Find visit by code or guest name
+            const foundVisit = sampleVisits.find(v => 
+                v.code.toLowerCase() === searchQuery.toLowerCase() || 
+                v.guest.fullName.toLowerCase().includes(searchQuery.toLowerCase())
+            );
             
-            const foundVisit = sampleVisits.find(v => v.code === visitCode);
             if (foundVisit) {
                 setVisit(foundVisit);
+                setError('');
             } else {
-                setError('Visit not found');
+                setError('No visit found with the provided ID or guest name');
+                // Clear error message after 3 seconds
+                setTimeout(() => {
+                    setError('');
+                }, 3000);
                 setVisit(null);
             }
         } catch (error) {
-            setError('Error fetching visit details');
+            setError('Error searching for visit');
+            // Clear error message after 3 seconds
+            setTimeout(() => {
+                setError('');
+            }, 3000);
             setVisit(null);
         } finally {
             setLoading(false);
@@ -145,8 +157,16 @@ export default function CheckInPanel() {
                 checkedIn: new Date().toISOString()
             }));
             setSuccess('Guest checked in successfully');
+            // Clear success message after 3 seconds
+            setTimeout(() => {
+                setSuccess('');
+            }, 3000);
         } catch (error) {
             setError('Failed to check in guest');
+            // Clear error message after 3 seconds
+            setTimeout(() => {
+                setError('');
+            }, 3000);
         } finally {
             setLoading(false);
         }
@@ -162,8 +182,16 @@ export default function CheckInPanel() {
                 checkedOut: new Date().toISOString()
             }));
             setSuccess('Guest checked out successfully');
+            // Clear success message after 3 seconds
+            setTimeout(() => {
+                setSuccess('');
+            }, 3000);
         } catch (error) {
             setError('Failed to check out guest');
+            // Clear error message after 3 seconds
+            setTimeout(() => {
+                setError('');
+            }, 3000);
         } finally {
             setLoading(false);
         }
@@ -182,31 +210,31 @@ export default function CheckInPanel() {
 
     return (
         <div className="check-in-panel">
-            <Paper className="search-section">
-                <div className="search-container">
-                    <TextField
-                        fullWidth
-                        label="Enter Visit Code"
-                        value={visitCode}
-                        onChange={(e) => setVisitCode(e.target.value)}
+            <div className="search-section">
+                <form onSubmit={handleSearch} className="search-container">
+                    <div className="search-input">
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder="Enter Visit ID or Guest Name..."
+                            disabled={loading}
+                        />
+                    </div>
+                    <button type="submit" className="search-button" disabled={loading || !searchQuery.trim()}>
+                        <SearchIcon sx={{ fontSize: 20 }} /> 
+                    </button>
+                    <button 
+                        type="button" 
+                        className="qr-button" 
+                        title="Scan QR Code" 
+                        onClick={handleScan}
                         disabled={loading}
-                    />
-                    <Button
-                        variant="contained"
-                        onClick={handleSearch}
-                        disabled={loading || !visitCode.trim()}
-                        startIcon={<SearchIcon />}
                     >
-                        Search
-                    </Button>
-                    <IconButton onClick={handleScan} disabled={loading}>
-                        <QrCodeScannerIcon />
-                    </IconButton>
-                </div>
-
-                {error && <Alert severity="error" className="alert-message">{error}</Alert>}
-                {success && <Alert severity="success" className="alert-message">{success}</Alert>}
-            </Paper>
+                        <QrCodeScannerIcon sx={{ fontSize: 20 }} />
+                    </button>
+                </form>
+            </div>
 
             {visit && visit.status === 'approved' && (
                 <Paper className="visit-details">
@@ -313,28 +341,40 @@ export default function CheckInPanel() {
                     <Divider className="actions-divider" />
 
                     <div className="actions-section">
-                        {!visit.checkedOut && (
+                        {(error || success) && (
+                            <div className="action-alerts">
+                                {error && <Alert severity="error" className="alert-message">{error}</Alert>}
+                                {success && <Alert severity="success" className="alert-message">{success}</Alert>}
+                            </div>
+                        )}
+                        {visit.checkedOut ? (
+                            <button
+                                className="completed-button"
+                                disabled={true}
+                            >
+                                <CheckCircleIcon sx={{ fontSize: 20 }} />
+                                Checked Out
+                            </button>
+                        ) : (
                             <>
                                 {!visit.checkedIn ? (
-                                    <Button
-                                        variant="contained"
-                                        color="primary"
-                                        startIcon={<CheckCircleIcon />}
+                                    <button
+                                        className="check-in-button"
                                         onClick={handleCheckIn}
                                         disabled={loading}
                                     >
+                                        <CheckCircleIcon sx={{ fontSize: 20 }} />
                                         Check In
-                                    </Button>
+                                    </button>
                                 ) : (
-                                    <Button
-                                        variant="contained"
-                                        color="secondary"
-                                        startIcon={<LogoutIcon />}
+                                    <button
+                                        className="check-out-button"
                                         onClick={handleCheckOut}
                                         disabled={loading}
                                     >
+                                        <LogoutIcon sx={{ fontSize: 20 }} />
                                         Check Out
-                                    </Button>
+                                    </button>
                                 )}
                             </>
                         )}

@@ -139,30 +139,38 @@
 }
 
 .form-actions {
+    margin-top: 24px;
     display: flex;
-    gap: 15px;
     justify-content: flex-end;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
 }
 
-.submit-button, .cancel-button {
-    padding: 10px 24px;
-    border-radius: 6px;
-    font-size: 14px;
+.submit-button {
+    background-color: #006A71;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.submit-button {
-    background-color: #006A71 !important;
-    color: white;
-    border: none;
+.submit-button:hover {
+    background-color: #005a60;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.submit-button:hover {
-    background-color: #025258 !important;
+.submit-button:active {
+    transform: translateY(0);
+}
+
+.submit-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 .cancel-button {
