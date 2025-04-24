@@ -12,6 +12,7 @@ import VisitApprovalPage from './Pages/VisitApproval/VisitApprovalPage';
 import CheckInPanelPage from './Pages/CheckInPanel/CheckInPanelPage';
 import UserManagementPage from './Pages/UserManagement/UserManagementPage';
 import LoginPage from './Pages/Login/LoginPage';
+import NewUser from './Components/userManagement/NewUser';
 
 // Layout component to wrap pages that need sidebar and topbar
 const Layout = ({ children }) => {
@@ -56,7 +57,7 @@ function App() {
       <PageWrapper>
         <Routes>
           {/* Redirect root to home after login */}
-          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route path="/" element={<Home />} />
           
           {/* Login Route */}
           <Route path="/login" element={<LoginPage />} />
@@ -64,6 +65,7 @@ function App() {
           {/* Main Routes */}
           <Route path="/home" element={<Home />} />
           <Route path="/user" element={<UserManagementPage />} />
+          <Route path="/users/new" element={<NewUser />} />
           <Route path="/guest/registration" element={<GuestRegistrationPage />} />
           <Route path="/visit/request" element={<VisitRequestPage />} />
           <Route path="/visit/approval" element={<VisitApprovalPage />} />

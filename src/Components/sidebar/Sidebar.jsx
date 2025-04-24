@@ -35,14 +35,18 @@ export default function Sidebar({ isCollapsed }) {
     setActiveItem(path);
   };
 
+  const isDashboardActive = () => {
+    return activeItem === "/" || activeItem === "/home";
+  };
+
   return (
     <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
       <div className="sidebarwrapper">
         <div className="sidebarMenu">
           <h1 className="title">eNGEDA.</h1>
           <ul className="sideBarList">
-            <Link to="/" className="link" onClick={() => handleItemClick("/")}>
-              <li className={`sidebarListItem ${activeItem === "/" ? "active" : ""}`}>
+            <Link to="/home" className="link" onClick={() => handleItemClick("/home")}>
+              <li className={`sidebarListItem ${isDashboardActive() ? "active" : ""}`}>
                 <DashboardIcon className="sideBarIcons" />
                 Dashboard
               </li>

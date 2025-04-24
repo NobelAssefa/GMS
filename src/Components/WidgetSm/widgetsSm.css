@@ -1,14 +1,15 @@
 .widgetSm{
     flex: 1;
-    box-shadow: -1px 4px 14px -1px rgba(0,0,0,0.23);
-    -webkit-box-shadow: -1px 4px 14px -1px rgba(0,0,0,0.23);
-    -moz-box-shadow: -1px 4px 14px -1px rgba(0,0,0,0.23);
-    margin-right: 20px;
     padding: 20px;
+    box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
+    background-color: white;
+    border-radius: 10px;
 }
 .widgetSmTitle{
     font-size: 22px;
     font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
 }
 .widgetSmList{
     margin: 0;
@@ -20,13 +21,12 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right:15px ;
 }
 .widgetSmItem{
     display: flex;
     align-items: center;
-    margin: 20px 0;
     justify-content: space-between;
+    margin: 20px 0;
 }
 .widgetSmbutton{
     display: flex;
@@ -35,23 +35,29 @@
     border-radius: 10px;
     padding:7px 10px;
     background-color: #eeeef7;
-    color: #018080;
+    color: #555;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+.widgetSmbutton:hover{
+    background-color: #e0e0e0;
 }
 .widgetsmIcon{
-    margin-right: 5px ;
-    font-size: 15px !important;
+    font-size: 16px !important;
+    margin-right: 5px;
 }
 .widgetSmUser{
     display: flex;
     flex-direction: column;
-    margin-right: 10px;
+    flex: 1;
+    margin-left: 15px;
 }
 .widgetSmUsername{
     font-weight: 600;
-   
+    color: #333;
 }
 .widgetSmJobcatagory{
     font-weight: 300;
-    font-size: 15px;
+    color: #666;
+    font-size: 14px;
 }

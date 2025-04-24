@@ -27,7 +27,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/home');
+        navigate('/');
     };
 
     return (

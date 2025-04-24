@@ -23,6 +23,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
+import { useNavigate } from 'react-router-dom';
 import './userManagement.css';
 
 // Sample user data
@@ -66,6 +67,7 @@ const sampleUsers = [
 ];
 
 export default function UserManagement() {
+    const navigate = useNavigate();
     const [users, setUsers] = useState(sampleUsers);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -109,6 +111,10 @@ export default function UserManagement() {
         handleMenuClose();
     };
 
+    const handleAddNewUser = () => {
+        navigate('/users/new');
+    };
+
     const filteredUsers = users.filter(user =>
         user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         user.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -136,6 +142,7 @@ export default function UserManagement() {
                     color="primary"
                     startIcon={<AddIcon />}
                     className="add-user-button"
+                    onClick={handleAddNewUser}
                 >
                     Add New User
                 </Button>

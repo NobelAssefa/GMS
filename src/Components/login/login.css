@@ -4,7 +4,7 @@
     align-items: center;
     min-height: 100vh;
     position: relative;
-    background-color: #e3f2fd;
+    background-color: white;
     padding: 20px;
 }
 
@@ -26,7 +26,7 @@
 .login-content {
     width: 100%;
     max-width: 400px;
-    background: white;
+    background: linear-gradient(135deg, #006A71 0%, rgb(62, 88, 113) 100%);;
     border-radius: 10px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     padding: 40px;
@@ -36,14 +36,14 @@
 
 .welcome-text {
     font-size: 32px !important;
-    font-weight: 600 !important;
-    color: #333;
+    font-weight: 800 !important;
+    color: #ffffff;
     margin-bottom: 16px !important;
     text-align: left;
 }
 
 .welcome-subtitle {
-    color: #666;
+    color: #F2EFE7;
     margin-bottom: 32px !important;
     text-align: left;
     font-size: 14px !important;
@@ -79,7 +79,7 @@
 }
 
 .submit-btn {
-    background-color: #1976d2 !important;
+    background-color: #9ACBD0 !important;
     padding: 12px !important;
     font-size: 14px !important;
     font-weight: 600 !important;
@@ -98,11 +98,11 @@
 }
 
 /* Adjust right panel to take full width */
-.right-panel {
+    .right-panel {
     width: 100%;
-}
+    }
 
-.create-account-text {
+    .create-account-text {
     font-size: 32px !important;
     font-weight: 600 !important;
     color: #333;
