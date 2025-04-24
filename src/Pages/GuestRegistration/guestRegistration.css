@@ -7,7 +7,7 @@
 .page-header {
     margin-bottom: 30px;
     padding: 20px;
-    background: linear-gradient(145deg, #ffffff, #f0f2f8);
+    background: linear-gradient(145deg, #48A6A7  , #117375 ) !important;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }

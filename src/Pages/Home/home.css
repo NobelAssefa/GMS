@@ -6,8 +6,9 @@
 .dashboard-title {
     font-size: 28px;
     font-weight: 800;
-    color: #1F2C40;
+    color: #006A71;
     margin-bottom: 25px;
+    padding-top: 15px;
     padding-left: 5px;
 }
 
@@ -20,7 +21,7 @@
 .chart-wrapper {
     flex: 1;
     padding: 20px;
-    background: linear-gradient(145deg, #ffffff, #f0f2f8);
+    background: linear-gradient(145deg, #F2EFE7, #cbd0e1);
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     min-height: 320px;

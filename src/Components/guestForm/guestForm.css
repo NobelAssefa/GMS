@@ -1,10 +1,13 @@
 .guest-form-container {
-    background-color: white;
+    background-color: #9acbd01b;
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
+    max-width: 1200px;
     margin: 20px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
 }
 
 .form-header {
@@ -13,7 +16,7 @@
 
 .form-header h2 {
     font-size: 24px;
-    color: #1F2C40;
+    color: #006A71  !important;
     margin-bottom: 8px;
     font-weight: 600;
 }
@@ -54,7 +57,7 @@
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #1F2C40;
+    color: #006A71 !important;
     font-size: 14px;
     font-weight: 500;
 }
@@ -65,7 +68,7 @@
     border: 1px solid #ddd;
     border-radius: 6px;
     font-size: 14px;
-    color: #333;
+    color: #006A71 !important;
     transition: all 0.3s ease;
 }
 
@@ -125,7 +128,7 @@
     background-color: #f5f6fa;
     border: 1px solid #ddd;
     border-radius: 6px;
-    color: #1F2C40;
+    color: #006A71;
     cursor: pointer;
     font-size: 14px;
     transition: all 0.3s ease;
@@ -153,13 +156,13 @@
 }
 
 .submit-button {
-    background-color: #1F2C40;
+    background-color: #006A71 !important;
     color: white;
     border: none;
 }
 
 .submit-button:hover {
-    background-color: #2a3b55;
+    background-color: #025258 !important;
 }
 
 .cancel-button {
@@ -181,7 +184,7 @@
 }
 
 .items-section h3 {
-    color: #1F2C40;
+    color: #006A71 !important;
     margin-bottom: 15px;
     font-size: 18px;
     font-weight: 600;
@@ -274,4 +277,74 @@
 .remove-item-button:disabled {
     color: #ccc;
     cursor: not-allowed;
+}
+
+.preview-card {
+    background: white;
+    border-radius: 10px;
+    padding: 24px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+}
+
+.preview-card h3 {
+    color: #006A71;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.preview-section {
+    margin-bottom: 24px;
+}
+
+.preview-section h4 {
+    color: #006A71;
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.preview-field {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.preview-label {
+    color: #666;
+    font-size: 14px;
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.preview-value {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.preview-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.preview-item-chip {
+    background: #f0f2f8;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    color: #006A71;
+}
+
+.preview-empty {
+    color: #999;
+    font-style: italic;
+    font-size: 14px;
 }
